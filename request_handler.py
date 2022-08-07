@@ -42,3 +42,10 @@ class RequestHandler:
     @property
     def url(self):
         return self._url
+
+    def raise_invalid_status(self, response):
+        if response.status_code != self._expected_status:
+            raise ValueError(
+                f"Expected status was: {self._expected_status} but got: {response.status_code},"
+                f" content is: {response.content}"
+            )
