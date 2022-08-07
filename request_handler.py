@@ -38,3 +38,7 @@ class RequestHandler:
     @property
     def response(self):
         return self._response
+
+    @property
+    def url(self):
+        return self._url
