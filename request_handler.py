@@ -34,3 +34,7 @@ class RequestHandler:
             response._content = bytes('{"error": true, "detail": "' + str(ex) + '"}', 'utf-8')
             self._response = response
             return response
+
+    @property
+    def response(self):
+        return self._response
